@@ -1,1 +1,13 @@
-<p>datapage works!</p>
+<div class="text-center">
+    <button mdbBtn type="button" color="primary" (click)="switchView(0)" mdbWavesEffect>Temperature</button>
+    <button mdbBtn type="button" color="info" (click)="switchView(1)" mdbWavesEffect>Averages</button>
+    <button mdbBtn type="button" color="default" (click)="switchView(2)" mdbWavesEffect>Scatterplot</button>
+</div>
+
+
+
+<div [ngSwitch]="display" >
+    <app-linegraph *ngSwitchCase=0></app-linegraph>
+    <app-averages *ngSwitchCase=1 ></app-averages>
+    <app-scatterplot *ngSwitchCase=2></app-scatterplot>
+</div>

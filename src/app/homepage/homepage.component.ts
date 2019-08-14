@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WheatherService } from '../services/wheather.service';
+import { WeatherService } from '../services/weather.service';
 
 @Component({
   selector: 'app-homepage',
@@ -9,7 +9,7 @@ import { WheatherService } from '../services/wheather.service';
 export class HomepageComponent implements OnInit {
   data : any;
   icon : string;
-  constructor(private weatherService : WheatherService) {
+  constructor(private weatherService : WeatherService) {
     this.data = null;
    }
 
@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
 
   getWeatherData(){
     this.weatherService.getCurrentWheather().then(
-      ()=>    this.icon = "http://openweathermap.org/img/wn/"+this.weatherService.currentWeather.weather[0].icon+"@2x.png"
+      ()=>    this.icon = "http://openweathermap.org/img/wn/"+this.weatherService.currentWeather.icon+"@2x.png"
     );
   }
 
